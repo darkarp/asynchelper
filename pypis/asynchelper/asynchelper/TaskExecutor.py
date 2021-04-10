@@ -12,9 +12,8 @@ def signal_handler(signal, frame):
 
 class TaskManager:
 
-    def __init__(self, workers=None):
-        if workers:
-            self.semaphore = asyncio.Semaphore(workers)
+    def __init__(self, workers: int):
+        self.semaphore = asyncio.Semaphore(workers) if workers else None
         self.tasks = set()
 
     async def _put(self, coro):
@@ -39,7 +38,7 @@ class TaskManager:
         return self._join()
 
 
-async def forever(task: callable, args: Iterable = [], workers: int = 256) -> None:
+async def forever(task: callable, args: Iterable = [], workers: Union(int, None) = 128) -> None:
     """Infinite loop for a task with arguments with a maximum limit of concurrent tasks.
     Terminates with CTRL + C (SIGINT)
 
@@ -53,7 +52,7 @@ async def forever(task: callable, args: Iterable = [], workers: int = 256) -> No
             await manager._put(task(*args))
 
 
-async def map(task_generator: Iterable[callable], workers: int = 0) -> None:
+async def map(task_generator: Iterable[callable], workers: Union(int, None) = 128) -> None:
     """Schedules execution for an iterable of asynchronous functions, with a maximum limit of concurrent tasks.
     Terminates with CTRL + C (SIGINT)
 

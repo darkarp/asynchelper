@@ -15,7 +15,7 @@ def read(filename):
 
 setup(
     name="asynchelper",
-    version="0.1.2",
+    version="0.1.3",
     url="https://github.com/darkarp/asynchelper",
     license='MIT',
 
