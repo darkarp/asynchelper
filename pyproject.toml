@@ -8,6 +8,5 @@ author = "Mario Nascimento"
 author-email = "mario@whitehathacking.tech"
 home-page = "https://github.com/darkarp/asynchelper"
 classifiers = [ "License :: OSI Approved :: MIT License",]
-requires-python = ">=3.7"
 description-file = "README.rst"
 
