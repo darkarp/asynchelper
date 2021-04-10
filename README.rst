@@ -1,5 +1,5 @@
 asynchelper
-===========
+============
 
 .. image:: https://img.shields.io/pypi/v/asynchelper.svg
     :target: https://pypi.python.org/pypi/asynchelper
