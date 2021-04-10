@@ -13,8 +13,7 @@ def signal_handler(signal, frame):
 class TaskManager:
 
     def __init__(self, workers=None):
-        if workers:
-            self.semaphore = asyncio.Semaphore(workers)
+        self.semaphore = workers and asyncio.Semaphore(workers)
         self.tasks = set()
 
     async def _put(self, coro):
