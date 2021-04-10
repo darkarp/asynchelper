@@ -29,14 +29,14 @@ class TaskManager:
         if self.semaphore:
             self.semaphore.release()
 
-    async def join(self):
+    async def _join(self):
         await asyncio.gather(*self.tasks)
 
     async def __aenter__(self):
         return self
 
     def __aexit__(self, *args, **kwargs):
-        return self.join()
+        return self._join()
 
 
 async def forever(task: callable, args: Iterable = [], workers: int = 256) -> None:
