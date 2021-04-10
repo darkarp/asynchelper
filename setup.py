@@ -14,9 +14,9 @@ def read(filename):
 
 
 setup(
-    name="asyncloop",
+    name="asynchelper",
     version="0.1.0",
-    url="https://github.com/darkarp/asyncloop",
+    url="https://github.com/darkarp/asynchelper",
     license='MIT',
 
     author="Mario Nascimento",

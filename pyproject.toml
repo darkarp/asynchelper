@@ -3,10 +3,10 @@ requires = ["flit_core >=2,<4"]
 build-backend = "flit_core.buildapi"
 
 [tool.flit.metadata]
-module = "asyncloop"
+module = "asynchelper"
 author = "Mario Nascimento"
 author-email = "mario@whitehathacking.tech"
-home-page = "https://github.com/darkarp/asyncloop"
+home-page = "https://github.com/darkarp/asynchelper"
 classifiers = [ "License :: OSI Approved :: MIT License",]
 requires-python = ">=3.7"
 description-file = "README.rst"
